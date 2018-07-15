@@ -1,0 +1,56 @@
+html, body {
+    background-image: url("../images/cafe-768771_1920.jpg");
+   
+    
+}
+
+
+.navbar-default {
+	background-color:#FFFDD0;
+	margin-bottom: 0;
+	
+}
+
+.section-heading, #discipline-selector {
+	display: block;	
+	float: none;
+	margin: 0;
+}
+
+.section-heading {
+	margin-bottom: 50px;
+}
+
+#count-select {
+	margin-left: 15px;
+}
+
+#gender-select {
+	margin-left: 15px;
+}
+
+.number-box {
+	margin-right: 75px;
+}
+
+.number-box, .fa.fa-gender {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.custom-chart {
+	margin-bottom: 40px;
+}
+
+.section {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 30px 0;
+	
+}
+
+.container {
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	padding: 10px;
+}
