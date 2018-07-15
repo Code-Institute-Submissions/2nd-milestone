@@ -5,26 +5,14 @@ queue()
 function makeGraphs(error, bestrestaurantsData) {
     var ndx = crossfilter(bestrestaurantsData);
     
-   bestrestaurantsData.forEach(function(d){
-         d.Ranking = parseInt(d["Ranking"]);
+    bestrestaurantsData.forEach(function(d){
          d.Longitude = parseInt(d["Longitude"]);
          d.Latitude = parseInt(d["Latitude"]);
     });
     
-    
 
-
-    var dim = ndx.dimension(dc.pluck("Country"));  
-    var group = dim.group();
-    
-    dc.selectMenu("#count-select")
-        .dimension(dim)
-        .group(group)
-
-
-
-
-    var eDim = ndx.dimension(dc.pluck("Ranking"));
+  
+   var eDim = ndx.dimension(dc.pluck("City"));
     var experienceDim = ndx.dimension(function(d){
         return [d.Latitude, d.Longitude];
     });
@@ -41,75 +29,62 @@ function makeGraphs(error, bestrestaurantsData) {
             .dimension(experienceDim)
             .group(experienceSalaryGroup);
             
-
-       var name_dim = ndx.dimension(dc.pluck('City'));
-      var experienceDim = ndx.dimension(function(d){
-        return [d.Ranking];
-    });
-    
-    
-    var experienceSalaryGroup = experienceDim.group();
+            
+    var name_dim = ndx.dimension(dc.pluck('City'));
+    var total_spend_per_store = name_dim.group();
         dc.pieChart('#h-t-o')
             .height(230)
             .radius(800)
             .innerRadius(70)
             .transitionDuration(1500)
             .ordinalColors(['#c78752','#964B00'])
-            .dimension(experienceDim)
-            .group(experienceSalaryGroup);
+            .dimension(name_dim)
+            .group(total_spend_per_store);
             
             
-        var store_dim = ndx.dimension(dc.pluck('Name'));
-        var total_spend_per_store = store_dim.group().reduceSum(dc.pluck('Year'));
+            
+    var name_dim = ndx.dimension(dc.pluck('Name'));
+    var total_spend_per_store = name_dim.group();
         dc.pieChart('#per-store-chart')
             .height(230)
             .radius(800)
             .innerRadius(70)
             .transitionDuration(1500)
             .ordinalColors(['#c78752','#964B00'])
-            .dimension(store_dim)
+            .dimension(name_dim)
             .group(total_spend_per_store);
-            
-            
-            
+  
+  
+  
 
-            
-   var eDim = ndx.dimension(dc.pluck("Name"));
-    var experienceDim = ndx.dimension(function(d){
-        return [d.Latitude, d.Longitude];
-    });
-    
-    var experienceSalaryGroup = experienceDim.group();
-        dc.rowChart("#country-chart")
-        .width(800)
+  
+ /* rowchart */          
+
+   var eDim = ndx.dimension(dc.pluck("Country"));
+   var experienceSalaryGroup = eDim.group();
+        dc.barChart("#country-chart")
+        .width(1100)
         .height(650)
         .margins({top: 30, right: 30, bottom: 40, left: 60})
-        .dimension(experienceDim)
+        .dimension(eDim)
         .group(experienceSalaryGroup)
         .ordinalColors(['#a97947'])
         .transitionDuration(800)
         .x(d3.scale.ordinal())
-        .elasticX(true)
-        .xAxis().ticks(30);
-        
-    var state_dim = ndx.dimension(dc.pluck('Ranking'));
-    var total_spend_per_state = state_dim.group().reduceSum(dc.pluck('Year'));
-        dc.rowChart("#rank-chart")
-        .width(800)
-        .height(650)
-        .margins({top: 30, right: 30, bottom: 40, left: 60})
-        .dimension(state_dim)
-        .group(total_spend_per_state)
-        .ordinalColors(['#a97947'])
-        .transitionDuration(800)
-        .x(d3.scale.ordinal())
-        .elasticX(true)
-        .xAxis().ticks(30);
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .xAxisLabel("Gender")
+        .yAxis().ticks(20);
         
         
+    var dim = ndx.dimension(dc.pluck("Ranking"));
+    var group = dim.group();
+    
+    dc.selectMenu("#race-select")
+        .dimension(dim)
+        .group(group)
 
 
-        
     dc.renderAll();
 }
             
