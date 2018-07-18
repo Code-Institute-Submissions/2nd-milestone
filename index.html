@@ -16,21 +16,29 @@
     <script type="text/javascript" src="files/js/dc.min.js"></script>
     <script type="text/javascript" src="files/js/queue.min.js"></script>
     <script type="text/javascript" src="files/js/graph.js"></script>
-   
-
 </head>
+
 <body>
 
       <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">The World's 50 Best Restaurants 2018</a>
-        </div>
+           <input type = "button" value = "Reset Dashboard" onClick = "window.location.reload()"> </div>
     </div>
     </nav>
 
-    <main>
+<main>
+   <section class = "section">
+        <div class="container">
+            <div class="row">
+             <div class="col-xs-12 col-sm-4 text-center" id ="rank-select" class="custom-chart">
+                 <h5>Ranking of Restaurants (1 to 50)</h5>
+             </div>
+         </div>
+    </div>
         
+    <section class = "section">
         <div class="container">
             <div class="row">
              <div class="col-xs-12 col-sm-4 text-center" id ="longlang-chart" class="custom-chart">
@@ -46,18 +54,19 @@
               </div>
          </div>
     </div>
-              <div id="country-chart"></div>
-              
-              <div id="race-select"></div>
-              
-              <div id="per-store-chart"></div>
-              
-              <div id="city-names"></div>
-
-
+  </section> 
+    
+    <section class = "section">
+        <div class="container">
+            <div class="row">
+             <div class="col-xs-12 col-sm-4 text-center" id="country-chart" class="custom-chart">
+              <h2>Countries</h2>
+          </div>
+       </div>
+   </div>       
+</section>             
 
 </main>
-
 </body>
 </html>
     

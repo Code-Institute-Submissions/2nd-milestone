@@ -11,54 +11,62 @@ function makeGraphs(error, bestrestaurantsData) {
     });
     
 
+/* Ranking Selector*/
+
+ var dim = ndx.dimension(dc.pluck("Ranking"));
+    var group = dim.group();
+    
+    dc.selectMenu("#rank-select")
+        .dimension(dim)
+        .group(group)
+
+
+/*Dimensions, Groups and PieCharts */
   
-   var eDim = ndx.dimension(dc.pluck("City"));
-    var experienceDim = ndx.dimension(function(d){
+  
+    var eDim = ndx.dimension(dc.pluck("City"));
+    var longDim = ndx.dimension(function(d){
         return [d.Latitude, d.Longitude];
     });
     
     
-    var experienceSalaryGroup = experienceDim.group();
+    var longGroup = longDim.group();
         
-        dc.pieChart('#per-name-chart')
-            .height(230)
-            .radius(800)
-            .innerRadius(70)
-            .transitionDuration(1500)
+        dc.pieChart('#longlang-chart')
+            .height(300)
+            .radius(780)
+            .innerRadius(60)
+            .transitionDuration(100)
             .ordinalColors(['#c78752','#964B00'])
-            .dimension(experienceDim)
-            .group(experienceSalaryGroup);
+            .dimension(longDim)
+            .group(longGroup);
             
             
     var name_dim = ndx.dimension(dc.pluck('City'));
-    var total_spend_per_store = name_dim.group();
-        dc.pieChart('#h-t-o')
-            .height(230)
-            .radius(800)
+    var nameGroup = name_dim.group();
+        dc.pieChart('#city-names')
+            .height(300)
+            .radius(780)
             .innerRadius(70)
             .transitionDuration(1500)
             .ordinalColors(['#c78752','#964B00'])
             .dimension(name_dim)
-            .group(total_spend_per_store);
+            .group(nameGroup);
             
             
-            
-    var name_dim = ndx.dimension(dc.pluck('Name'));
-    var total_spend_per_store = name_dim.group();
-        dc.pieChart('#per-store-chart')
-            .height(230)
-            .radius(800)
-            .innerRadius(70)
+        var store_dim = ndx.dimension(dc.pluck('Name'));
+        var total_spend_per_store = store_dim.group().reduceSum(dc.pluck('Year'));
+        dc.pieChart('#name-chart')
+            .height(300)
+            .radius(780)
             .transitionDuration(1500)
             .ordinalColors(['#c78752','#964B00'])
-            .dimension(name_dim)
+            .dimension(store_dim)
             .group(total_spend_per_store);
-  
-  
-  
+            
 
   
- /* rowchart */          
+ /*Dimension, Groups and barChart*/          
 
    var eDim = ndx.dimension(dc.pluck("Country"));
    var experienceSalaryGroup = eDim.group();
@@ -75,15 +83,7 @@ function makeGraphs(error, bestrestaurantsData) {
         .elasticY(true)
         .xAxisLabel("Gender")
         .yAxis().ticks(20);
-        
-        
-    var dim = ndx.dimension(dc.pluck("Ranking"));
-    var group = dim.group();
-    
-    dc.selectMenu("#race-select")
-        .dimension(dim)
-        .group(group)
-
+   
 
     dc.renderAll();
 }
