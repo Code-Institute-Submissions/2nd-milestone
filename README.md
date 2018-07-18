@@ -13,7 +13,7 @@ This data dashboard is based on the world's 50 best restaurants. It is based on 
 
 The dashboard was tested using Jasmine Testing Framework https://jasmine.github.io/index.html
 You can navigate easily through the site by clicking on the different charts. 
-The main one would be to using the ranking selector.
+The main one would be to using the ranking selectorag.
 
 ## Deployment
 
