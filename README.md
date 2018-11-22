@@ -12,7 +12,7 @@ This data dashboard is based on the world's 50 best restaurants. It is based on 
 
 # Wireframe
 
-![alt text](/files/images/IMG_20181122_194850.jpg)
+
 ![alt text](/files/images/IMG_20181122_194850.jpg)
 ![alt text](/files/images/IMG_20181122_200439.jpg)
 
