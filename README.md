@@ -13,7 +13,7 @@ This data dashboard is based on the world's 50 best restaurants. It is based on 
 
 The dashboard was tested using Jasmine Testing Framework https://jasmine.github.io/index.html
 You can navigate easily through the site by clicking on the different charts. 
-The main one would be to using the ranking selectorag.
+The main one would be to using the ranking selector.
 
 ## Deployment
 
@@ -24,18 +24,28 @@ as my source and saved it.
 3. My site is now published at https://ainedoyle.github.io/2nd-milestone/
 
 
-## Technologies 
+## Technologies Used
 
 The technologies used were:
 
-- HTML https://www.w3schools.com/html/
-- CSS https://www.w3schools.com/Css/
-- Bootstrap https://getbootstrap.com/
-- Javascript https://www.w3schools.com/jS/default.asp
-- D3.js https://d3js.org/
-- Crossfilter http://square.github.io/crossfilter/
+- [HTML](https://www.w3schools.com/html/)
+    - For the front-end of the project
+- [CSS](https://www.w3schools.com/Css/)
+    - To style the project
+- [Bootstrap](https://getbootstrap.com/)
+    - For the project to be responsive
+- [Javascript](https://www.w3schools.com/jS/default.asp)
+    - For building interaction
+- [D3.js]( https://d3js.org/)
+    - Javascript library for visualizing data
+- [Crossfilter](http://square.github.io/crossfilter/)
+    - Javascript library for interaction with data
 
-## References 
+
+
+## Credits
+
+Content
 
 https://www.kaggle.com/mmayur/the-worlds-50-best-restaurants
 
@@ -46,3 +56,12 @@ https://blog.udemy.com/javascript-page-refresh/
 https://www.w3schools.com/
 
 https://d3js.org/
+
+
+Media
+
+https://pixabay.com/en/
+
+Acknowledgements
+
+I received inspiration for this project from my Code Institute course
