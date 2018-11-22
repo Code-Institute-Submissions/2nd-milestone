@@ -2,14 +2,26 @@
 
 This data dashboard is based on the world's 50 best restaurants. It is based on the ranking of the restaurants from 1 to 50. 
 
+
+## UX
+- As a user, I want to learn more about what are the best restaurants around the world .
+- As a user, I want to use the dropdown menu to click on a number and view a restaurant.
+- As a user, I want to learn what country and city the restaurant is based in.
+- As a user, I want to know the restaurant's name and where it is ranked from 1 - 50. 
+- As a user, I want to be able to click on the different diagrams to explore the website and it's interactivity.
+
+# Wireframe
+
+![alt text](/files/images/IMG_20181122_194850.jpg)
+![alt text](/files/images/IMG_20181122_194850.jpg)
+![alt text](/files/images/IMG_20181122_200439.jpg)
+
 ## Contents
 
 1. Selector for the rankings.
 2. Three pie charts based on location, city and restaurant names.
 3. Bar Chart based on countries.
 
-
-![alt text](/files/images/IMG_20181122_194850.jpg)
 
 ## Functionality and Testing
 
