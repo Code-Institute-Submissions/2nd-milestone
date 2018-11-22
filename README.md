@@ -9,6 +9,8 @@ This data dashboard is based on the world's 50 best restaurants. It is based on 
 3. Bar Chart based on countries.
 
 
+![alt text](/files/images/IMG_20181122_194850.jpg)
+
 ## Functionality and Testing
 
 The dashboard was tested using Jasmine Testing Framework https://jasmine.github.io/index.html
