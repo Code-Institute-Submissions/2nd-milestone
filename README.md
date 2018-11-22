@@ -14,6 +14,7 @@ This data dashboard is based on the world's 50 best restaurants. It is based on 
 
 
 ![alt text](/files/images/IMG_20181122_194850.jpg)
+![alt text](/files/images/IMG_20181122_194843.jpg)
 ![alt text](/files/images/IMG_20181122_200439.jpg)
 
 ## Contents
